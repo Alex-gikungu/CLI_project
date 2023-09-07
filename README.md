@@ -36,10 +36,12 @@ The project is structured around five main classes: `Artist`, `Album`, `Users`, 
 
 3. Install project dependencies using Pipenv:
 
+   ``` bash
    pipenv install
 
 4. Activate the virtual environment:
    
+   ``` bash
    pipenv shell
 
 ### How to run the project 
