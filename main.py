@@ -26,7 +26,7 @@
 # session.add(albm)
 # session.commit()
 
-# usr = Users(user_name="alex gikungu", user_email="alexigikungu.012@gmail.com")
+# usr = Users(user_name="alex gikungu", user_email="alexigikungu.012@gmail.com",user_password=1234)
 # usr2 = Users(user_name="patty muteve", user_email="patty@gmail.com")
 # usr3 = Users(user_name="john wick", user_email="wick@gmail.com")
 # usr4 = Users(user_name="nany wany", user_email="nany@gmail.com")

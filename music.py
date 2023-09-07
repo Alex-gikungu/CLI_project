@@ -88,38 +88,38 @@
 #         print(f"Songs starting with '{search_letter}':")
 #         for song in songs:
 #             print(f"{song.song_title} by {song.album.artist.artist_name}")
-
 # def songs_menu(user):
 #     while True:
 #         print("\nSongs Menu:")
 #         print("1. List Songs")
 #         print("2. Add Song")
-#         print("3. Back to Main Menu")
+#         print("3. Delete Song")  # Add an option for deleting songs
+#         print("4. Back to Main Menu")
+#         option = input("Select an option: ")
 
-#         choice = input("Select an option: ")
-
-#         if choice == "1":
-#             list_songs()  # Implement functionality to list songs from the Songs table
-#         elif choice == "2":
-#             add_song(user)  # Implement functionality to add a song to the Songs table
-#         elif choice == "3":
-#             break  # Return to the Main Menu
+#         if option == "1":
+#             list_songs()
+#         elif option == "2":
+#             add_song(user)
+#         elif option == "3":
+#             delete_song()  # Call the delete_song function
+#         elif option == "4":
+#             return
 #         else:
 #             print("Invalid option. Please choose a valid option.")
 
 
 # def list_songs():
-#     # Query songs and their associated album titles
-#     songs = session.query(Songs.song_title, Songs.song_duration,Songs.genre). \
-#         join(Artist) 
+#     # Query songs and their associated artist names
+#     songs = session.query(Songs.song_title, Songs.song_duration, Songs.genre, Artist.artist_name). \
+#         join(Artist).all()
 
 #     print("\nList of Songs:")
 #     for song in songs:
 #         print(f"Song Title: {song.song_title}")
+#         print(f"Artist: {song.artist_name}")
 #         print(f"Song Duration: {song.song_duration}")
-#         print (f"Genre :{song.genre}\n")
-#         # print(f"Artist: {songs.artist_name}")
-#         # print(f"Album: {songs.album_title}\n")
+#         print(f"Genre: {song.genre}\n")
 
 #     input("Press Enter to continue...")
 
@@ -144,12 +144,32 @@
 
 #     print("Song added successfully!")
 
+# def delete_song():
+#     song_title = input("Enter the title of the song you want to delete: ")
+
+#     # Query the song to be deleted
+#     song_to_delete = session.query(Songs).filter_by(song_title = song_title).first()
+
+#     if song_to_delete:
+#         print(f"Deleting the song: {song_to_delete.song_title}")
+        
+#         # Delete the song from the session
+#         session.delete(song_to_delete)
+#         session.commit()
+
+#         print("Song deleted successfully!")
+#     else:
+#         print(f"Song with title '{song_title}' not found.")
+
+#     input("Press Enter to continue...")
+
 # def favorite_songs_menu(user):
 #     while True:
 #         print("\nFavorite Songs Menu:")
 #         print("1. List Favorite Songs")
 #         print("2. Add Favorite Song")
-#         print("3. Back to Main Menu")
+#         print("3. Remove from Favorite")
+#         print("4. Back to Main Menu")
 
 #         choice = input("Select an option: ")
 
@@ -158,6 +178,8 @@
 #         elif choice == "2":
 #             add_favorite_song(user)  # Implement functionality to add a favorite song
 #         elif choice == "3":
+#             remove_from_favorite()  # Call the remove_from_favorite function
+#         elif choice == "4":
 #             break  # Return to the Main Menu
 #         else:
 #             print("Invalid option. Please choose a valid option.")
@@ -169,8 +191,8 @@
 #         print("No favorite songs found.")
 #     else:
 #         print("List of Favorite Songs:")
-#         for favorite in favorite_songs:
-#             print(f"{favorite.songs.song_title} by {favorite.songs.artist.artist_name}")
+#         for index, favorite in enumerate(favorite_songs, start=1):
+#             print(f"{index}. {favorite.songs.song_title} by {favorite.songs.artist.artist_name}")
 
 # # Rest of your code...
 
@@ -196,6 +218,28 @@
 
 #     print("Favorite song added successfully!")
 
+
+# def remove_from_favorite():
+
+#     song_title = input("Enter the song title to remove from the favorite list: ")
+
+#     # Query the userfavorite table to find the song by title
+#     song_to_remove = session.query(Favourite).join(Songs).filter(Songs.song_title == song_title).first()
+
+#     if song_to_remove:
+#         print(f"Deleting the song: {song_to_remove.songs.song_title}")
+        
+#         # Delete the song from the session
+#         session.delete(song_to_remove)
+#         session.commit()
+
+#         print("Song deleted successfully!")
+#     else:
+#         print(f"Song with title '{song_title}' not found in favorites.")
+
+#     input("Press Enter to continue...")
+
+# # Make sure you import the necessary models:
 
 # if __name__ == '__main__':
 #     create_reports_directory()
