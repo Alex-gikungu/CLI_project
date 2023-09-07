@@ -30,7 +30,9 @@ The project is structured around five main classes: `Artist`, `Album`, `Users`, 
 
 2. Navigate to the repository's directory:
    
-    cd CLI_project
+   ``` bash
+   cd CLI_project
+
 
 3. Install project dependencies using Pipenv:
 
