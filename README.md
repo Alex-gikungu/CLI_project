@@ -48,7 +48,8 @@ The project is structured around five main classes: `Artist`, `Album`, `Users`, 
 
 To interact with the project and see how it works run the following command in the terminal 
 
-  python3 music.py 
+    python3 music.py 
+
 
 ##  License 
 
