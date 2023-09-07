@@ -1,4 +1,4 @@
-<!-- # Music Library Project
+# Music Library Project
 
 ## Author
 Alex Gikungu
@@ -48,4 +48,4 @@ To interact with the project and see how it works run the following command in t
 
 ##  License 
 
-This project is licensed under the [MIT License](LICENSE). -->
+This project is licensed under the [MIT License](LICENSE).
