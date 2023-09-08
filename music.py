@@ -13,24 +13,24 @@ session = Session()
 def create_reports_directory():
   os.makedirs('reports', exist_ok=True) 
 
-# # Function to create a new user account  
-# def create_account():
+# Function to create a new user account  
+def create_account():
   
-#   # Get user input
-#   name = input("Name: ")
-#   email = input("Email: ")
-#   password = input("Password: ")
-#   confirm_password = input("Confirm Password: ")
+  # Get user input
+  name = input("Name: ")
+  email = input("Email: ")
+  password = input("Password: ")
+  confirm_password = input("Confirm Password: ")
 
-#   # Validate password match
-#   if password != confirm_password:
-#     print("Passwords do not match. Account creation failed.")
-#   else:   
-#     # Creating and adding User object
-#     user = Users(user_name=name, user_email=email, user_password=password)
-#     session.add(user)
-#     session.commit()
-#     print("Account created successfully!")
+  # Validate password match
+  if password != confirm_password:
+    print("Passwords do not match. Account creation failed.")
+  else:   
+    # Creating and adding User object
+    user = Users(user_name=name, user_email=email, user_password=password)
+    session.add(user)
+    session.commit()
+    print("Account created successfully!")
 
 # # Function for user to login
 # def login():
