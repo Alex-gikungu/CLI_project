@@ -1,7 +1,7 @@
 # from sqlalchemy import create_engine
 # from sqlalchemy.orm import sessionmaker
 
-# from models import Artist, Album, Base, Users, Songs, Favourite  # Import your models from model.py
+# from models import Artist, Album, Base, Users, Songs, Favourite 
 
 # engine = create_engine("sqlite:///main.db", echo=True)
 # Base.metadata.create_all(bind=engine)
