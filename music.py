@@ -125,22 +125,22 @@ def songs_menu(user):
     else:
       print("Invalid option. Please choose a valid option.")
 
-# # Print list of all songs
-# def list_songs():
-#   # Query for song data 
-#   songs = session.query(Songs.song_title, Songs.song_duration, Songs.genre, Artist.artist_name).\
-#     join(Artist).all()
+# Print list of all songs
+def list_songs():
+  # Query for song data 
+  songs = session.query(Songs.song_title, Songs.song_duration, Songs.genre, Artist.artist_name).\
+    join(Artist).all()
 
-#   print("\nList of Songs:")
+  print("\nList of Songs:")
   
-#   # Print songs
-#   for song in songs:
-#     print(f"Song Title: {song.song_title}")
-#     print(f"Artist: {song.artist_name}")
-#     print(f"Song Duration: {song.song_duration}")
-#     print(f"Genre: {song.genre}\n")
+  # Print songs
+  for song in songs:
+    print(f"Song Title: {song.song_title}")
+    print(f"Artist: {song.artist_name}")
+    print(f"Song Duration: {song.song_duration}")
+    print(f"Genre: {song.genre}\n")
 
-#   input("Press Enter to continue...")
+  input("Press Enter to continue...")
 
 # # Add a new song
 # def add_song(user):
