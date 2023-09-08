@@ -208,39 +208,39 @@ def favorite_songs_menu(user):
     else:
       print("Invalid option. Please choose a valid option.")
 
-# # Print user's favorited songs 
-# def list_favorite_songs(user):
-#   favorite_songs = session.query(Favourite).filter_by(users=user).all()
+# Print user's favorited songs 
+def list_favorite_songs(user):
+  favorite_songs = session.query(Favourite).filter_by(users=user).all()
 
-#   if not favorite_songs:
-#     print("No favorite songs found.")
-#   else:
-#     print("List of Favorite Songs:")
-#     for index, favorite in enumerate(favorite_songs, start=1):
-#       print(f"{index}. {favorite.songs.song_title} by {favorite.songs.artist.artist_name}")
+  if not favorite_songs:
+    print("No favorite songs found.")
+  else:
+    print("List of Favorite Songs:")
+    for index, favorite in enumerate(favorite_songs, start=1):
+      print(f"{index}. {favorite.songs.song_title} by {favorite.songs.artist.artist_name}")
 
-# # Add song to user's favorites
-# def add_favorite_song(user):
+# Add song to user's favorites
+def add_favorite_song(user):
   
-#   print("Add a Favorite Song:")
-#   song_title = input("Song Title: ")
-#   artist_name = input("Artist Name: ")
+  print("Add a Favorite Song:")
+  song_title = input("Song Title: ")
+  artist_name = input("Artist Name: ")
 
-#   # Query for song
-#   song = session.query(Songs).\
-#     join(Artist, Songs.artist_id == Artist.artist_id).\
-#     filter(Songs.song_title == song_title, Artist.artist_name == artist_name).first()
+  # Query for song
+  song = session.query(Songs).\
+    join(Artist, Songs.artist_id == Artist.artist_id).\
+    filter(Songs.song_title == song_title, Artist.artist_name == artist_name).first()
 
-#   if not song:
-#     print("Song or artist not found.")
-#     return
+  if not song:
+    print("Song or artist not found.")
+    return
   
-#   # Create and add favorite association
-#   favorite = Favourite(users=user, songs=song)
-#   session.add(favorite)
-#   session.commit()
+  # Create and add favorite association
+  favorite = Favourite(users=user, songs=song)
+  session.add(favorite)
+  session.commit()
 
-#   print("Favorite song added successfully!")
+  print("Favorite song added successfully!")
 
 # # Remove song from user's favorites
 # def remove_from_favorite():
