@@ -32,22 +32,22 @@ def create_account():
     session.commit()
     print("Account created successfully!")
 
-# # Function for user to login
-# def login():
+# Function for user to login
+def login():
 
-#   # Get login credentials
-#   email = input("Email: ")
-#   password = input("Password: ")
+  # Get login credentials
+  email = input("Email: ")
+  password = input("Password: ")
 
-#   # Query for user
-#   user = session.query(Users).filter_by(user_email=email, user_password=password).first()
+  # Query for user
+  user = session.query(Users).filter_by(user_email=email, user_password=password).first()
   
-#   # Check if user found and login
-#   if user:
-#     print("Login successful!")
-#     main_menu(user)  
-#   else:
-#     print("Login failed. Please check your credentials.")
+  # Check if user found and login
+  if user:
+    print("Login successful!")
+    main_menu(user)  
+  else:
+    print("Login failed. Please check your credentials.")
 
 # # Main menu function 
 # def main_menu(user):
