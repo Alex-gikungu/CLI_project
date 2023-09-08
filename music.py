@@ -101,29 +101,29 @@ def search_songs():
 
   input("Press Enter to continue to the main menu.")
 
-# # Menu for song CRUD operations
-# def songs_menu(user):
+# Menu for song CRUD operations
+def songs_menu(user):
   
-#   while True:
+  while True:
 
-#     print("\nSongs Menu:")
-#     print("1. List Songs")
-#     print("2. Add Song")
-#     print("3. Delete Song")
-#     print("4. Back to Main Menu")
+    print("\nSongs Menu:")
+    print("1. List Songs")
+    print("2. Add Song")
+    print("3. Delete Song")
+    print("4. Back to Main Menu")
     
-#     option = input("Select an option: ")
+    option = input("Select an option: ")
 
-#     if option == "1":
-#       list_songs()
-#     elif option == "2":
-#       add_song(user)
-#     elif option == "3":
-#       delete_song()
-#     elif option == "4":
-#       return
-#     else:
-#       print("Invalid option. Please choose a valid option.")
+    if option == "1":
+      list_songs()
+    elif option == "2":
+      add_song(user)
+    elif option == "3":
+      delete_song()
+    elif option == "4":
+      return
+    else:
+      print("Invalid option. Please choose a valid option.")
 
 # # Print list of all songs
 # def list_songs():
