@@ -235,49 +235,49 @@ def add_favorite_song(user):
     print("Song or artist not found.")
     return
   
-  # Create and add favorite association
+  # Creating and add favorite association
   favorite = Favourite(users=user, songs=song)
   session.add(favorite)
   session.commit()
 
   print("Favorite song added successfully!")
 
-# # Remove song from user's favorites
-# def remove_from_favorite():
-#   song_title = input("Enter the song title to remove from the favorite list: ")
+# Remove song from user's favorites
+def remove_from_favorite():
+  song_title = input("Enter the song title to remove from the favorite list: ")
 
-#   # Query for favorited song
-#   song_to_remove = session.query(Favourite).join(Songs).filter(Songs.song_title == song_title).first()
+  # Query for favorited song
+  song_to_remove = session.query(Favourite).join(Songs).filter(Songs.song_title == song_title).first()
 
-#   if song_to_remove:
-#     print(f"Deleting the song: {song_to_remove.songs.song_title}")  
-#     session.delete(song_to_remove)
-#     session.commit()
-#     print("Song deleted successfully!")
-#   else:
-#     print(f"Song with title '{song_title}' not found in favorites.")
+  if song_to_remove:
+    print(f"Deleting the song: {song_to_remove.songs.song_title}")  
+    session.delete(song_to_remove)
+    session.commit()
+    print("Song deleted successfully!")
+  else:
+    print(f"Song with title '{song_title}' not found in favorites.")
 
-#   input("Press Enter to continue...")
+  input("Press Enter to continue...")
 
-# # Main script  
-# if __name__ == '__main__':
+# Main script  
+if __name__ == '__main__':
 
-#   create_reports_directory()
+  create_reports_directory()
 
-#   while True:
-#     print("\nOptions:")
-#     print("1. Create Account")
-#     print("2. Login")
-#     print("3. Exit")
+  while True:
+    print("\nOptions:")
+    print("1. Create Account")
+    print("2. Login")
+    print("3. Exit")
 
-#     option = input("Select an option: ")
+    option = input("Select an option: ")
 
-#     if option == "1":
-#       create_account()
-#     elif option == "2":
-#       login()
-#     elif option == "3":
-#       print("Exiting the application. Goodbye!")
-#       break
-#     else:
-#       print("Invalid option. Please choose a valid option.")
+    if option == "1":
+      create_account()
+    elif option == "2":
+      login()
+    elif option == "3":
+      print("Exiting the application. Goodbye!")
+      break
+    else:
+      print("Invalid option. Please choose a valid option.")
