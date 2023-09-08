@@ -35,19 +35,19 @@ class Users(Base):
     # Define a relationship to the Favourite model
     userfavorite = relationship("Favourite", back_populates="users")
 
-# #songs table
-# class Songs(Base):
-#     __tablename__ = "songs"
+#songs table
+class Songs(Base):
+    __tablename__ = "songs"
 
-#     song_id = Column(Integer, primary_key=True)
-#     song_title = Column(String)
-#     song_duration = Column(String)
-#     artist_id = Column(Integer, ForeignKey("artist.artist_id"))  # Define the foreign key
-#     genre = Column(String)
+    song_id = Column(Integer, primary_key=True)
+    song_title = Column(String)
+    song_duration = Column(String)
+    artist_id = Column(Integer, ForeignKey("artist.artist_id"))  # Define the foreign key
+    genre = Column(String)
 
-#     # Define relationships to the Artist and Favourite models
-#     artist = relationship("Artist", back_populates="songs")
-#     userfavorite = relationship("Favourite", back_populates="songs")
+    # Define relationships to the Artist and Favourite models
+    artist = relationship("Artist", back_populates="songs")
+    userfavorite = relationship("Favourite", back_populates="songs")
 
 # #userfavorite table 
 # class Favourite(Base):
