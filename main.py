@@ -1,55 +1,52 @@
-# from sqlalchemy import create_engine
-# from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine 
+from sqlalchemy.orm import sessionmaker
+from models import Artist, Album, Base, Users, Songs, Favourite
 
-# from models import Artist, Album, Base, Users, Songs, Favourite 
+# Create SQLAlchemy engine and session
+engine = create_engine("sqlite:///main.db", echo=True)
+Base.metadata.create_all(bind=engine) 
+Session = sessionmaker(bind=engine)
+session = Session()
 
-# engine = create_engine("sqlite:///main.db", echo=True)
-# Base.metadata.create_all(bind=engine)
-
-# Session = sessionmaker(bind=engine)
-# session = Session()
-
-# # Create artists, albums, users, and songs here
-
+# # Create artist objects
 # art = Artist(artist_name="Migos", genre="Hip Hop")
-# art2 = Artist(artist_name="Lil Wayne", genre="Hip Hop")
+# art2 = Artist(artist_name="Lil Wayne", genre="Hip Hop") 
 # art3 = Artist(artist_name="Demathew", genre="Mugithi")
 # art4 = Artist(artist_name="Samidoh", genre="Mugithi")
 
+# # Add artists to session
 # session.add(art)
-# session.add(art2)
+# session.add(art2) 
 # session.add(art3)
 # session.add(art4)
-# session.commit()
 
+# # Commit artist changes
+# session.commit() 
+
+# # Create album object
 # albm = Album(title="Culture", release="12-03-2014")
+
+# # Add and commit album 
 # session.add(albm)
 # session.commit()
 
-# usr = Users(user_name="alex gikungu", user_email="alexigikungu.012@gmail.com",user_password=1234)
-# usr2 = Users(user_name="patty muteve", user_email="patty@gmail.com")
-# usr3 = Users(user_name="john wick", user_email="wick@gmail.com")
-# usr4 = Users(user_name="nany wany", user_email="nany@gmail.com")
+# # Create user objects
+# usr = Users(user_name="alex gikungu", user_email="alexigikungu.012@gmail.com", user_password=1234)
 
-# session.add(usr)
-# session.add(usr2)
-# session.add(usr3)
-# session.add(usr4)
+# # Add and commit users
+# session.add(usr) 
 # session.commit()
 
-# # Create songs and associate them with artists
-# sng = Songs(song_title="pure water", song_duration="3.40", artist=art, genre=art.genre)  # Specify the artist object
-# sng2 = Songs(song_title="love wins", song_duration="2.90", artist=art2, genre=art2.genre)  # Specify the artist object
-# sng3 = Songs(song_title="jamba ya ruriri", song_duration="3.00", artist=art3, genre=art3.genre)  # Specify the artist object
-# sng4 = Songs(song_title="Thie Ukimaga", song_duration="4.12", artist=art4, genre=art4.genre)  # Specify the artist object
+# # Create song objects associated with artists
+# sng = Songs(song_title="pure water", song_duration="3.40", artist=art, genre=art.genre)
 
-# session.add(sng)
-# session.add(sng2)
-# session.add(sng3)
-# session.add(sng4)
+# # Add and commit songs
+# session.add(sng)   
 # session.commit()
 
-# # Create favorites for the user
-# fvs = Favourite(users=usr, songs=sng)  # Specify the user and the songs
+# # Create favorite association for user
+# fvs = Favourite(users=usr, songs=sng) 
+
+# # Add and commit favorite
 # session.add(fvs)
 # session.commit()
