@@ -23,17 +23,17 @@ class Album(Base):
     title = Column(String)
     release = Column(String)
 
-# #user table
-# class Users(Base):
-#     __tablename__ = "users"
+#user table
+class Users(Base):
+    __tablename__ = "users"
 
-#     user_id = Column(Integer, primary_key=True)
-#     user_name = Column(String)
-#     user_email = Column(String)
-#     user_password = Column(String)
+    user_id = Column(Integer, primary_key=True)
+    user_name = Column(String)
+    user_email = Column(String)
+    user_password = Column(String)
 
-#     # Define a relationship to the Favourite model
-#     userfavorite = relationship("Favourite", back_populates="users")
+    # Define a relationship to the Favourite model
+    userfavorite = relationship("Favourite", back_populates="users")
 
 # #songs table
 # class Songs(Base):
