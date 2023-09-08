@@ -65,22 +65,22 @@ def main_menu(user):
 
     choice = input("Select an option: ")
     
-#     # Call appropriate function based on choice
-#     if choice == "1":
-#       songs_menu(user)  
-#     elif choice == "2":
-#       print("You selected 'Albums'.")        
-#     elif choice == "3":
-#       print("You selected 'Artists'.")         
-#     elif choice == "4":
-#       favorite_songs_menu(user)   
-#     elif choice == "5":
-#       search_songs()
-#     elif choice == "6":
-#       print("Exiting the application. Goodbye!")
-#       break
-#     else:
-#       print("Invalid option. Please choose a valid option.")
+    # Call appropriate function based on choice
+    if choice == "1":
+      songs_menu(user)  
+    elif choice == "2":
+      print("You selected 'Albums'.")        
+    elif choice == "3":
+      print("You selected 'Artists'.")         
+    elif choice == "4":
+      favorite_songs_menu(user)   
+    elif choice == "5":
+      search_songs()
+    elif choice == "6":
+      print("Exiting the application. Goodbye!")
+      break
+    else:
+      print("Invalid option. Please choose a valid option.")
 
 # # Allow searching songs by first letter 
 # def search_songs():
