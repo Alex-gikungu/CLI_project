@@ -142,28 +142,28 @@ def list_songs():
 
   input("Press Enter to continue...")
 
-# # Add a new song
-# def add_song(user):
+# Add a new song
+def add_song(user):
   
-#   # Get song details
-#   title = input("Song Title: ")
-#   duration = input("Song Duration: ")
-#   artist_name = input("Artist Name: ")
-#   genre = input("Genre: ")
+  # Get song details
+  title = input("Song Title: ")
+  duration = input("Song Duration: ")
+  artist_name = input("Artist Name: ")
+  genre = input("Genre: ")
 
-#   # Get or create artist
-#   artist = session.query(Artist).filter_by(artist_name=artist_name).first()
-#   if not artist:
-#     artist = Artist(artist_name=artist_name, genre=genre)
-#     session.add(artist)
-#     session.commit()
+  # Get or create artist
+  artist = session.query(Artist).filter_by(artist_name=artist_name).first()
+  if not artist:
+    artist = Artist(artist_name=artist_name, genre=genre)
+    session.add(artist)
+    session.commit()
 
-#   # Create and add song
-#   song = Songs(song_title=title, song_duration=duration, artist=artist, genre=genre)
-#   session.add(song)
-#   session.commit()
+  # Create and add song
+  song = Songs(song_title=title, song_duration=duration, artist=artist, genre=genre)
+  session.add(song)
+  session.commit()
 
-#   print("Song added successfully!")
+  print("Song added successfully!")
   
 # # Delete a song  
 # def delete_song():
