@@ -158,31 +158,31 @@ def add_song(user):
     session.add(artist)
     session.commit()
 
-  # Create and add song
+  # Creating and add song
   song = Songs(song_title=title, song_duration=duration, artist=artist, genre=genre)
   session.add(song)
   session.commit()
 
   print("Song added successfully!")
   
-# # Delete a song  
-# def delete_song():
+# Delete a song  
+def delete_song():
 
-#   song_title = input("Enter the title of the song you want to delete: ")
+  song_title = input("Enter the title of the song you want to delete: ")
 
-#   # Query for song
-#   song_to_delete = session.query(Songs).filter_by(song_title=song_title).first()
+  # Query for song
+  song_to_delete = session.query(Songs).filter_by(song_title=song_title).first()
 
-#   # Delete song if found
-#   if song_to_delete:
-#     print(f"Deleting the song: {song_to_delete.song_title}")      
-#     session.delete(song_to_delete)
-#     session.commit()
-#     print("Song deleted successfully!")
-#   else:
-#     print(f"Song with title '{song_title}' not found.")
+  # Delete song if found
+  if song_to_delete:
+    print(f"Deleting the song: {song_to_delete.song_title}")      
+    session.delete(song_to_delete)
+    session.commit()
+    print("Song deleted successfully!")
+  else:
+    print(f"Song with title '{song_title}' not found.")
 
-#   input("Press Enter to continue...")
+  input("Press Enter to continue...")
 
 # # Menu for managing user's favorite songs
 # def favorite_songs_menu(user):
