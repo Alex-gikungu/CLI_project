@@ -184,29 +184,29 @@ def delete_song():
 
   input("Press Enter to continue...")
 
-# # Menu for managing user's favorite songs
-# def favorite_songs_menu(user):
+# Menu for managing user's favorite songs
+def favorite_songs_menu(user):
 
-#   while True:
-#     print("\nFavorite Songs Menu:")
+  while True:
+    print("\nFavorite Songs Menu:")
 
-#     print("1. List Favorite Songs")
-#     print("2. Add Favorite Song")
-#     print("3. Remove from Favorite")
-#     print("4. Back to Main Menu")
+    print("1. List Favorite Songs")
+    print("2. Add Favorite Song")
+    print("3. Remove from Favorite")
+    print("4. Back to Main Menu")
 
-#     choice = input("Select an option: ")
+    choice = input("Select an option: ")
 
-#     if choice == "1":
-#       list_favorite_songs(user)
-#     elif choice == "2":
-#       add_favorite_song(user)
-#     elif choice == "3":
-#       remove_from_favorite()
-#     elif choice == "4":
-#       break
-#     else:
-#       print("Invalid option. Please choose a valid option.")
+    if choice == "1":
+      list_favorite_songs(user)
+    elif choice == "2":
+      add_favorite_song(user)
+    elif choice == "3":
+      remove_from_favorite()
+    elif choice == "4":
+      break
+    else:
+      print("Invalid option. Please choose a valid option.")
 
 # # Print user's favorited songs 
 # def list_favorite_songs(user):
