@@ -8,20 +8,20 @@ Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# # Create artist objects
-# art = Artist(artist_name="Migos", genre="Hip Hop")
-# art2 = Artist(artist_name="Lil Wayne", genre="Hip Hop") 
-# art3 = Artist(artist_name="Demathew", genre="Mugithi")
-# art4 = Artist(artist_name="Samidoh", genre="Mugithi")
+# Creating artist objects
+art = Artist(artist_name="Migos", genre="Hip Hop")
+art2 = Artist(artist_name="Lil Wayne", genre="Hip Hop") 
+art3 = Artist(artist_name="Demathew", genre="Mugithi")
+art4 = Artist(artist_name="Samidoh", genre="Mugithi")
 
-# # Add artists to session
-# session.add(art)
-# session.add(art2) 
-# session.add(art3)
-# session.add(art4)
+# Add artists to session
+session.add(art)
+session.add(art2) 
+session.add(art3)
+session.add(art4)
 
-# # Commit artist changes
-# session.commit() 
+# Commit artist changes
+session.commit() 
 
 # # Create album object
 # albm = Album(title="Culture", release="12-03-2014")
