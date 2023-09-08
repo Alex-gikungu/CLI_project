@@ -49,14 +49,14 @@ class Songs(Base):
     artist = relationship("Artist", back_populates="songs")
     userfavorite = relationship("Favourite", back_populates="songs")
 
-# #userfavorite table 
-# class Favourite(Base):
-#     __tablename__ ="userfavorite"
+#userfavorite table 
+class Favourite(Base):
+    __tablename__ ="userfavorite"
 
-#     userfavourite_id = Column(Integer, primary_key=True)
-#     user_id = Column(Integer, ForeignKey("users.user_id"))  # Define the foreign key
-#     song_id = Column(Integer, ForeignKey("songs.song_id"))    # Define the foreign key
+    userfavourite_id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.user_id"))  # Define the foreign key
+    song_id = Column(Integer, ForeignKey("songs.song_id"))    # Define the foreign key
 
-#     # Define relationships to the Users and Songs models
-#     users = relationship("Users", back_populates="userfavorite")
-#     songs = relationship("Songs", back_populates="userfavorite")
+    # Define relationships to the Users and Songs models
+    users = relationship("Users", back_populates="userfavorite")
+    songs = relationship("Songs", back_populates="userfavorite")
