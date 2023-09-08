@@ -23,40 +23,40 @@ class Album(Base):
     title = Column(String)
     release = Column(String)
 
-#user table
-class Users(Base):
-    __tablename__ = "users"
+# #user table
+# class Users(Base):
+#     __tablename__ = "users"
 
-    user_id = Column(Integer, primary_key=True)
-    user_name = Column(String)
-    user_email = Column(String)
-    user_password = Column(String)
+#     user_id = Column(Integer, primary_key=True)
+#     user_name = Column(String)
+#     user_email = Column(String)
+#     user_password = Column(String)
 
-    # Define a relationship to the Favourite model
-    userfavorite = relationship("Favourite", back_populates="users")
+#     # Define a relationship to the Favourite model
+#     userfavorite = relationship("Favourite", back_populates="users")
 
-#songs table
-class Songs(Base):
-    __tablename__ = "songs"
+# #songs table
+# class Songs(Base):
+#     __tablename__ = "songs"
 
-    song_id = Column(Integer, primary_key=True)
-    song_title = Column(String)
-    song_duration = Column(String)
-    artist_id = Column(Integer, ForeignKey("artist.artist_id"))  # Define the foreign key
-    genre = Column(String)
+#     song_id = Column(Integer, primary_key=True)
+#     song_title = Column(String)
+#     song_duration = Column(String)
+#     artist_id = Column(Integer, ForeignKey("artist.artist_id"))  # Define the foreign key
+#     genre = Column(String)
 
-    # Define relationships to the Artist and Favourite models
-    artist = relationship("Artist", back_populates="songs")
-    userfavorite = relationship("Favourite", back_populates="songs")
+#     # Define relationships to the Artist and Favourite models
+#     artist = relationship("Artist", back_populates="songs")
+#     userfavorite = relationship("Favourite", back_populates="songs")
 
-#userfavorite table 
-class Favourite(Base):
-    __tablename__ ="userfavorite"
+# #userfavorite table 
+# class Favourite(Base):
+#     __tablename__ ="userfavorite"
 
-    userfavourite_id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("users.user_id"))  # Define the foreign key
-    song_id = Column(Integer, ForeignKey("songs.song_id"))    # Define the foreign key
+#     userfavourite_id = Column(Integer, primary_key=True)
+#     user_id = Column(Integer, ForeignKey("users.user_id"))  # Define the foreign key
+#     song_id = Column(Integer, ForeignKey("songs.song_id"))    # Define the foreign key
 
-    # Define relationships to the Users and Songs models
-    users = relationship("Users", back_populates="userfavorite")
-    songs = relationship("Songs", back_populates="userfavorite")
+#     # Define relationships to the Users and Songs models
+#     users = relationship("Users", back_populates="userfavorite")
+#     songs = relationship("Songs", back_populates="userfavorite")
