@@ -19,6 +19,8 @@ The project is structured around five main classes: `Artist`, `Album`, `Users`, 
 
 - **Testing**: The project includes a `seeds.py` file that can be used to populate the database with sample data for testing and initial setup.
 
+-**Relationship** :To access the db diagram which shows the relationship click the link [https://dbdiagram.io/d/64f63c5502bd1c4a5ef32011]
+
 ## Getting Started
 
 ### Installation
