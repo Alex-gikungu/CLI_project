@@ -23,19 +23,19 @@ session.add(art4)
 # Commit artist changes
 session.commit() 
 
-# # Create album object
-# albm = Album(title="Culture", release="12-03-2014")
+# Creating album object
+albm = Album(title="Culture", release="12-03-2014")
 
-# # Add and commit album 
-# session.add(albm)
-# session.commit()
+# Add and commit album 
+session.add(albm)
+session.commit()
 
-# # Create user objects
-# usr = Users(user_name="alex gikungu", user_email="alexigikungu.012@gmail.com", user_password=1234)
+# Create user objects
+usr = Users(user_name="alex gikungu", user_email="alexigikungu.012@gmail.com", user_password=1234)
 
-# # Add and commit users
-# session.add(usr) 
-# session.commit()
+# Add and commit users
+session.add(usr) 
+session.commit()
 
 # # Create song objects associated with artists
 # sng = Songs(song_title="pure water", song_duration="3.40", artist=art, genre=art.genre)
