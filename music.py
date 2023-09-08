@@ -1,17 +1,17 @@
-# # Import required libraries
-# import os
-# from sqlalchemy import create_engine, select
-# from sqlalchemy.orm import sessionmaker
-# from models import Artist, Album, Users, Songs, Favourite 
+# Importing libraries
+import os
+from sqlalchemy import create_engine, select
+from sqlalchemy.orm import sessionmaker
+from models import Artist, Album, Users, Songs, Favourite 
 
-# # Create SQLAlchemy database engine and session
-# engine = create_engine("sqlite:///main.db", echo=True)  
-# Session = sessionmaker(bind=engine)
-# session = Session()
+# Creating SQLAlchemy database engine and session
+engine = create_engine("sqlite:///main.db", echo=True)  
+Session = sessionmaker(bind=engine)
+session = Session()
 
-# # Function to create reports directory if needed
-# def create_reports_directory():
-#   os.makedirs('reports', exist_ok=True) 
+# Function to create reports directory
+def create_reports_directory():
+  os.makedirs('reports', exist_ok=True) 
 
 # # Function to create a new user account  
 # def create_account():
@@ -26,7 +26,7 @@
 #   if password != confirm_password:
 #     print("Passwords do not match. Account creation failed.")
 #   else:   
-#     # Create and add User object
+#     # Creating and adding User object
 #     user = Users(user_name=name, user_email=email, user_password=password)
 #     session.add(user)
 #     session.commit()

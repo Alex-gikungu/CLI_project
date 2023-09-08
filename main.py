@@ -44,7 +44,7 @@ sng = Songs(song_title="pure water", song_duration="3.40", artist=art, genre=art
 session.add(sng)   
 session.commit()
 
-# Create favorite association for user
+# Creating favorite association for user
 fvs = Favourite(users=usr, songs=sng) 
 
 # Add and commit favorite
