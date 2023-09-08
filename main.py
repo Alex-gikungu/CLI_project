@@ -37,16 +37,16 @@ usr = Users(user_name="alex gikungu", user_email="alexigikungu.012@gmail.com", u
 session.add(usr) 
 session.commit()
 
-# # Create song objects associated with artists
-# sng = Songs(song_title="pure water", song_duration="3.40", artist=art, genre=art.genre)
+# Creating song objects associated with artists
+sng = Songs(song_title="pure water", song_duration="3.40", artist=art, genre=art.genre)
 
-# # Add and commit songs
-# session.add(sng)   
-# session.commit()
+# Add and commit songs
+session.add(sng)   
+session.commit()
 
-# # Create favorite association for user
-# fvs = Favourite(users=usr, songs=sng) 
+# Create favorite association for user
+fvs = Favourite(users=usr, songs=sng) 
 
-# # Add and commit favorite
-# session.add(fvs)
-# session.commit()
+# Add and commit favorite
+session.add(fvs)
+session.commit()
