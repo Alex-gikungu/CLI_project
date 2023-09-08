@@ -49,21 +49,21 @@ def login():
   else:
     print("Login failed. Please check your credentials.")
 
-# # Main menu function 
-# def main_menu(user):
+# Main menu function 
+def main_menu(user):
 
-#   # Menu loop
-#   while True:
-#     # Print options
-#     print("\nMain Menu:")
-#     print("1. Songs")
-#     print("2. Albums")
-#     print("3. Artists")
-#     print("4. Favorite Songs")
-#     print("5. Search for Songs")
-#     print("6. Exit")
+  # Menu loop
+  while True:
+    # Print options
+    print("\nMain Menu:")
+    print("1. Songs")
+    print("2. Albums")
+    print("3. Artists")
+    print("4. Favorite Songs")
+    print("5. Search for Songs")
+    print("6. Exit")
 
-#     choice = input("Select an option: ")
+    choice = input("Select an option: ")
     
 #     # Call appropriate function based on choice
 #     if choice == "1":
