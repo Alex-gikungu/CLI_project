@@ -82,24 +82,24 @@ def main_menu(user):
     else:
       print("Invalid option. Please choose a valid option.")
 
-# # Allow searching songs by first letter 
-# def search_songs():
+# Allow searching songs by first letter 
+def search_songs():
   
-#   search_letter = input("Enter the first letter of the song title: ")
-#   # Query for songs with title starting with search letter
-#   songs = session.query(Songs).filter(Songs.song_title.startswith(search_letter)).all()
+  search_letter = input("Enter the first letter of the song title: ")
+  # Query for songs with title starting with search letter
+  songs = session.query(Songs).filter(Songs.song_title.startswith(search_letter)).all()
 
-#   if not songs:
-#     print(f"No songs found starting with '{search_letter}'.")
-#   else:
-#     print(f"Songs starting with '{search_letter}':")
-#     # Print matching songs
-#     for song in songs:
-#       print(f"Song Title: {song.song_title}")
-#       print(f"Artist: {song.artist_id}")
-#       print("")
+  if not songs:
+    print(f"No songs found starting with '{search_letter}'.")
+  else:
+    print(f"Songs starting with '{search_letter}':")
+    # Print matching songs
+    for song in songs:
+      print(f"Song Title: {song.song_title}")
+      print(f"Artist: {song.artist_id}")
+      print("")
 
-#   input("Press Enter to continue to the main menu.")
+  input("Press Enter to continue to the main menu.")
 
 # # Menu for song CRUD operations
 # def songs_menu(user):
